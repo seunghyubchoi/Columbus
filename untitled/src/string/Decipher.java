@@ -19,24 +19,24 @@ public class Decipher {
             int cnt = 0; // 같은 횟수인 경우 ++ 해줄 변수
 
             for(int j = 0; j < charArr.length; j++) {
-                if(charArr[j] >= 'a' && charArr[j] <= 'z') { //
-                    arr[charArr[j] - 'a']++;
+                if(charArr[j] >= 'a' && charArr[j] <= 'z') { // 영소문자일 때만 입력 받는 조건문
+                    arr[charArr[j] - 'a']++; // 해당하는 인덱스 위치 수 증가
                 }
             }
 
             for(int j = 0; j < arr.length; j++) {
                 if(arr[max] < arr[j]){
-                    max = j;
+                    max = j; // 가장 큰 인덱스 값 max 에 담기
                 }
             }
 
             for(int j = 0; j < arr.length; j++) {
                 if(arr[max] == arr[j]){
-                    cnt++;
+                    cnt++; // arr을 돌며 같은 수를 가진 인덱스가 둘 이상인 경우 찾기
                 }
             }
 
-            char answer = cnt > 1 ? '?' : (char)(97 + max);
+            char answer = cnt > 1 ? '?' : (char)(97 + max); // cnt가 1 이상이면 ? 아니면 영문자 출력
             System.out.println(answer);
         }
     }
